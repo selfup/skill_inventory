@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<div class="jumbotron">
+    <h1>All Skills</h1>
+<br>
+<% @skills.each do |skill| %>
+    <div>
+   <h3><%= skill.id %>: <a href="/skills/<%= skill.id %>"> <%= skill.name %> </a></h3>
+   <a class="btn btn-success" href="/skills/<%= skill.id %>/edit">Edit</a>
+   <form action="/skills/<%= skill.id %>" method="POST" class="form-inline">
+     <input type="hidden" name="_method" value="DELETE">
+     <input type="submit" value="delete" class="btn btn-danger"/>
+     <br>
+   </form>
+<% end %>
+<br>
+    <h4><br><br><a href="/" class="btn btn-primary">Return to Skill Inventory</a></h4>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
